@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="100dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="17dp"
+        android:text="Player" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="45dp"
+        android:layout_height="41dp"
+        android:layout_alignStart="@+id/player"
+        android:layout_alignTop="@+id/player1Name"
+        android:contentDescription="@string/play_image"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/player"
+        android:layout_marginTop="54dp"
+        android:contentDescription="@string/player_image"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/playerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_marginStart="109dp"
+        android:text="@string/playerText" />
+
+    <TextView
+        android:id="@+id/player1Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="157dp"
+        android:layout_toStartOf="@+id/spinner"
+        android:text="@string/PlayerName" />
+
+    <TextView
+        android:id="@+id/numberOfCoins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/player"
+        android:layout_marginTop="160dp"
+        android:text="@string/numberOfCoins" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="236dp"
+        android:layout_height="61dp"
+        android:layout_centerInParent="true"
+        android:text="@string/play" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/player"
+        android:layout_marginBottom="189dp"
+        android:text="@string/resultText" />
+
+    <TextView
+        android:id="@+id/headNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/nameInput"
+        android:layout_alignTop="@+id/imageView"
+        android:text="@string/headNumber" />
+
+    <TextView
+        android:id="@+id/tailNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/headNumber"
+        android:layout_below="@+id/imageView"
+        android:text="@string/tailNumber" />
+
+    <TextView
+        android:id="@+id/betText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/playerText"
+        android:layout_marginTop="91dp"
+        android:text="@string/betText" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/play"
+        android:layout_alignTop="@+id/betText"
+        android:entries="@id/tailNumber"></Spinner>
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/player1Name"
+        android:layout_alignTop="@+id/resultText"
+        android:text="@string/resultView" />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/playerText"
+        android:layout_alignStart="@+id/numberOfCoinsInput"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/numberOfCoinsInput"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/numberOfCoins"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="86dp"
+        android:ems="10"
+        android:hint="@string/number"
+        android:inputType="number"
+        android:text="@string/_2"
+        tools:text="2" />
+
+    <TextView
+        android:id="@+id/tailNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/nameInput"
+        android:layout_below="@+id/imageView"
+        android:text="@string/tailNumView" />
+
+    <TextView
+        android:id="@+id/headNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginEnd="47dp"
+        android:text="@string/headNumView" />
+
+</RelativeLayout>
