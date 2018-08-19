@@ -18,4 +18,10 @@
     <string name="player_image">player image</string>
     <string name="name">name</string>
     <string name="string_player">\@string/player</string>
+    <string-array name="names">
+        <item>HEAD</item>
+        <item>TAIL</item>
+        <item>IT IS TIE</item>
+
+    </string-array>
 </resources>
