@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
                     resultView.setText("IT IS TIE");
                 }
 
-                headNumView.setText(numberOfHead);
-                tailNumView.setText(numberOfTail);
+                headNumView.setText(Integer.toString(numberOfHead));
+                tailNumView.setText(Integer.toString(numberOfTail));
                 // compare player result and get the winner or loser
                 if(win == guess){
                     winView.setText("Winner");

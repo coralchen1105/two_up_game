@@ -81,21 +81,20 @@
         android:text="@string/resultText" />
 
     <TextView
-        android:id="@+id/headNumber"
+        android:id="@+id/tailNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/player"
         android:layout_alignTop="@+id/tailNumView"
-        android:text="@string/headNumber" />
+        android:text="@string/tailNumber" />
 
     <TextView
-        android:id="@+id/tailNumber"
+        android:id="@+id/headNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/player"
-        android:layout_marginBottom="35dp"
-        android:text="@string/tailNumber" />
+        android:layout_alignTop="@+id/headNumView"
+        android:text="@string/headNumber" />
 
     <TextView
         android:id="@+id/betText"
@@ -148,21 +147,21 @@
         tools:text="2" />
 
     <TextView
+        android:id="@+id/headNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/spinner"
+        android:layout_marginBottom="32dp"
+        android:text="@string/tailNumView" />
+
+    <TextView
         android:id="@+id/tailNumView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/headNumView"
-        android:layout_marginBottom="85dp"
-        android:text="@string/tailNumView" />
-
-    <TextView
-        android:id="@+id/headNumView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/tailNumber"
-        android:layout_marginStart="140dp"
+        android:layout_alignStart="@+id/spinner"
+        android:layout_marginBottom="83dp"
         android:text="@string/headNumView" />
 
     <TextView
