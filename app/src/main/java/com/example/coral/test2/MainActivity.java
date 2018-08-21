@@ -14,39 +14,49 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     EditText playerNameInput;
     EditText numberOfCoins;
     TextView resultView;
     Button play;
-
-
+    String guess;
+    TextView winView;
+    TextView headNumView;
+    TextView tailNumView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // pass data field of interface
         playerNameInput = (EditText)findViewById(R.id.nameInput);
         numberOfCoins = (EditText)findViewById(R.id.numberOfCoinsInput);
         resultView = (TextView) findViewById(R.id.resultView);
+        winView = (TextView)findViewById(R.id.win);
+        headNumView = (TextView)findViewById(R.id.headNumView) ;
+        tailNumView = (TextView)findViewById(R.id.tailNumView);
+
+        // initial spinner data
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray((R.array.names)));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(myAdapter);
-
+        guess = spin.getSelectedItem().toString();
 
         play = (Button)findViewById(R.id.play);
 
         play.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                // initial variables of result
                 int numberOfHead = 0;
                 int numberOfTail = 0;
+                String  win = "";
+                // coins number process
                 String b = numberOfCoins.getText().toString();
-                System.out.println(b);
                 ArrayList<Integer> d = generateData(Integer.parseInt(b));
+                // set number of coin field to 2 by default
+                numberOfCoins.setText("2");
+                // calculate the number of head and tail
                 for(int i=0; i<d.size();i++){
                     System.out.println(i + ":" + d.get(i));
                     if(d.get(i) == 0){
@@ -56,21 +66,28 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
+                // get the result (head or tail win)
                 if(numberOfHead>numberOfTail){
-                    System.out.println("HEAD win");
+                    win = "HEAD";
+                    resultView.setText("Head");
                 }else if(numberOfHead<numberOfTail){
-                    System.out.println("TAIL win");
+                    win = "TAIL";
+                    resultView.setText("TAIL");
                 }else{
-                    System.out.println("It is TIE");
+                    win = "TIE";
+                    resultView.setText("IT IS TIE");
                 }
 
-                System.out.println("Head: " + numberOfHead);
-                System.out.println("Tail: " + numberOfTail);
-
-
+                headNumView.setText(numberOfHead);
+                tailNumView.setText(numberOfTail);
+                // compare player result and get the winner or loser
+                if(win == guess){
+                    winView.setText("Winner");
+                }else{
+                    winView.setText("Loser");
+                }
             }
         });;
-
     }
 
     public ArrayList generateData(int numOfCoin){
@@ -82,6 +99,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return coinDataList;
     }
-
-
 }

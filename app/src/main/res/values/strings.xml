@@ -21,7 +21,7 @@
     <string-array name="names">
         <item>HEAD</item>
         <item>TAIL</item>
-        <item>IT IS TIE</item>
+        <item>TIE</item>
 
     </string-array>
 </resources>
